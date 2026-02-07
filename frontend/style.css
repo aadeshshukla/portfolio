@@ -31,6 +31,9 @@ body {
     width: 100%;
     padding: 1rem 2rem;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -38,6 +41,54 @@ body {
 .navbar.scrolled {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Hamburger menu button - hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--dark-color);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: var(--dark-color);
+    left: 0;
+    transition: transform 0.3s ease;
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+/* Hamburger open state */
+.menu-toggle.open .hamburger {
+    background-color: transparent;
+}
+
+.menu-toggle.open .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-toggle.open .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
 }
 
 .nav-links {
@@ -153,12 +204,12 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 .project-card img {
     display: block;
@@ -249,7 +300,7 @@ footer {
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.visible {
@@ -270,6 +321,51 @@ footer {
         margin: 0 auto;
         max-width: 150px;
     }
+
+    /* Mobile navigation */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 1.5rem;
+        top: 1rem;
+    }
+
+    .navbar {
+        justify-content: flex-end;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    /* Project grid on mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 /* =============================================== */
 /* --- MOBILE OPTIMIZATIONS & FIXES --- */
@@ -285,20 +381,24 @@ footer {
 
     /* 2. Make the scroll animations more subtle on mobile */
     .reveal {
-        /* Was 30px, now reduced for a smoother feel on small screens */
         transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
     
     /* 3. Fix the contact form overflow issue */
     .contact-content {
-        /* Was 2rem, now reduced to leave more space for the form */
         padding: 2rem 1rem;
     }
 
     /* 4. Ensure form inputs don't have unexpected widths */
     .contact-form input,
     .contact-form textarea {
-        width: 100%; /* Explicitly set width to fill the container */
+        width: 100%;
+    }
+
+    /* 5. Certificates grid single column on mobile */
+    .certificates-grid {
+        grid-template-columns: 1fr;
     }
 }
 /* =============================================== */
