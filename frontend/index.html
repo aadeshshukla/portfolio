@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aadesh Shukla</title>
+    <meta name="description" content="Aadesh Shukla - Full-Stack Web Developer building AI-powered web applications including Pathfinder-AI.">
+    <title>Aadesh Shukla | Full-Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,12 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="reveal">Aadesh Shukla</h1>
-            <p class="reveal" data-delay="200">Aspiring Developer</p>
+            <p class="hero-title reveal" data-delay="200">Full-Stack Web Developer building AI-powered applications</p>
+            <p class="hero-value reveal" data-delay="400">I design and develop real-world web applications integrating modern AI models, authentication systems, and databases. Creator of Pathfinder-AI — a personalized AI learning roadmap platform.</p>
+            <div class="hero-buttons reveal" data-delay="600">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="https://github.com/aadeshshukla" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub Profile</a>
+            </div>
         </div>
     </section>
 
@@ -35,33 +41,93 @@
         <h2 class="section-title reveal">About Me</h2>
         <div class="about-content">
             <img src="portf.jpg" alt="Aadesh Shukla" class="profile-img reveal">
-            <p class="reveal" data-delay="200">"Hi, I’m Aadesh shukla, a passionate computer science student and aspiring developer with a love for coding and problem-solving. Over the past few years, I’ve gained hands-on experience in C , Python , java , (html,css,js), working on projects that involve web development , problem-solving ,OOPs concept, DBMS,. I’m constantly expanding my skill set and learning new technologies to build innovative solutions. When I’m not coding, I enjoy experimenting with new programming challenges, exploring tech trends, and collaborating with others on open-source projects. I’m always eager to connect with fellow developers and tech enthusiasts to share ideas and work on exciting projects!"
-            </p>
+            <div class="about-text reveal" data-delay="200">
+                <p>I am a full-stack developer focused on building practical web applications that solve real user problems. I specialize in integrating AI models into usable products rather than simple demos.</p>
+                <p>I have built multiple deployed applications including Pathfinder-AI, an AI-powered platform that generates personalized learning roadmaps using the LLaMA model. The system includes secure JWT authentication, user dashboards, and persistent database storage.</p>
+                <p>My development workflow covers the complete product lifecycle — UI design, API integration, backend development, database architecture, and deployment.</p>
+                <p>Currently I am improving scalability, user experience, and real-world usability of my applications while preparing for a professional web developer role.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="currently-building">
+        <h2 class="section-title reveal">Currently Building</h2>
+        <div class="currently-building-card reveal">
+            <h3>Pathfinder-AI <span class="badge">Active Development</span></h3>
+            <ul>
+                <li>Adding chat history persistence</li>
+                <li>Improving prompt engineering and response quality</li>
+                <li>Optimizing backend performance</li>
+                <li>Enhancing dashboard UI and roadmap visualization</li>
+            </ul>
         </div>
     </section>
 
     <section id="projects">
         <h2 class="section-title reveal">My Projects</h2>
         <div class="projects-grid">
-            <div class="project-card reveal">
-                <img src="Screenshot (65).png" alt="Project 1" style="width:90%">
+            <div class="project-card featured reveal">
+                <div class="featured-badge">Featured Project</div>
+                <img src="Screenshot (65).png" alt="Pathfinder-AI Screenshot" class="project-screenshot">
                 <div class="project-info">
-                    <h3><a href="https://pathfinder-ai-mu.vercel.app/" target="_blank" rel="noopener noreferrer">Pathfinder-AI</a></h3>
-                    <p> AI-Powered Learning Roadmap Generator</p>
+                    <h3>Pathfinder-AI</h3>
+                    <p class="project-problem">Pathfinder-AI is a full-stack AI web application that generates personalized learning roadmaps based on user goals, skill level, and time commitment. Users can create accounts, save roadmaps, and manage their learning plans through a secure dashboard.</p>
+                    <div class="project-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>AI roadmap generation using LLaMA model</li>
+                            <li>Secure JWT authentication</li>
+                            <li>User dashboard with saved roadmaps</li>
+                            <li>MongoDB database storage</li>
+                            <li>Responsive UI with animations</li>
+                        </ul>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Groq API</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://pathfinder-ai-mu.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/aadeshshukla" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    </div>
                 </div>
             </div>
             <div class="project-card reveal">
-                <img src="Screenshot (66).png" alt="Project 2" style="width:90%">
+                <img src="Screenshot (64).png" alt="Mausam AI Screenshot" class="project-screenshot">
                 <div class="project-info">
-                    <h3><a href="https://life-tracker-blond.vercel.app/" target="_blank" rel="noopener noreferrer">Life Tracker</a></h3>
-                    <p>Privacy-First AI Diary</p>
+                    <h3>Mausam AI</h3>
+                    <p class="project-problem">An AI chatbot application capable of real-time conversational interaction using a LLaMA language model API. Built a responsive chat interface and implemented asynchronous API communication handling.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">API Integration</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://mausam-ai.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/aadeshshukla" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    </div>
                 </div>
             </div>
             <div class="project-card reveal">
-                <img src="Screenshot (64).png" alt="Project 3" style="width:90%">
+                <img src="Screenshot (66).png" alt="Life Tracker Screenshot" class="project-screenshot">
                 <div class="project-info">
-                    <h3><a href="https://mausam-ai.vercel.app/" target="_blank" rel="noopener noreferrer">Mausam-Ai</a></h3>
-                    <p>AI-Powered Chatbot</p>
+                    <h3>Life Tracker</h3>
+                    <p class="project-problem">A privacy-focused AI diary that runs entirely inside the browser. It stores data locally and allows users to search memories using natural language queries.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">IndexedDB</span>
+                        <span class="tech-tag">Transformers.js</span>
+                    </div>
+                    <div class="project-buttons">
+                        <a href="https://life-tracker-blond.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
+                        <a href="https://github.com/aadeshshukla" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,14 +139,50 @@
     
             <div class="skills-subsection">
                 <h3 class="subsection-title reveal">Technical Skills</h3>
-                <div class="skills-grid">
-                    <span class="skill-tag reveal">HTML5</span>
-                    <span class="skill-tag reveal" data-delay="100">CSS3</span>
-                    <span class="skill-tag reveal" data-delay="200">JavaScript</span>
-                    <span class="skill-tag reveal" data-delay="300">Python</span>
-                    <span class="skill-tag reveal" data-delay="400">MERN Stack</span>
-                    <span class="skill-tag reveal" data-delay="500">Git & GitHub</span>
+                <div class="skills-categories">
+                    <div class="skill-category reveal">
+                        <h4>Frontend</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                        </div>
                     </div>
+                    <div class="skill-category reveal" data-delay="100">
+                        <h4>Backend</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal" data-delay="200">
+                        <h4>Database</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">IndexedDB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal" data-delay="300">
+                        <h4>AI Integration</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">LLM APIs</span>
+                            <span class="skill-tag">Prompt Engineering</span>
+                            <span class="skill-tag">AI Chat Interfaces</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal" data-delay="400">
+                        <h4>Tools</h4>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">VS Code</span>
+                        </div>
+                    </div>
+                </div>
             </div>
     
             <div class="certificates-subsection">
@@ -110,7 +212,8 @@
     <section id="contact">
         <h2 class="section-title reveal">Contact Me</h2>
         <div class="contact-content reveal">
-            <form class="contact-form">
+            <p class="contact-intro">I am actively seeking internship or junior web developer opportunities. I am especially interested in roles involving web applications, SaaS platforms, or AI-integrated products.</p>
+                <form class="contact-form">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <textarea rows="5" placeholder="Your Message" required></textarea>
