@@ -539,6 +539,22 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+
+    .reveal {
+        will-change: transform, opacity;
+    }
+
+    /* Section spacing */
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Hero */
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -549,6 +565,8 @@ footer {
         font-size: 0.9rem;
         padding: 0 1rem;
     }
+
+    /* About */
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -604,48 +622,127 @@ footer {
     /* Project grid on mobile */
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .project-card.featured {
         grid-column: 1;
     }
 
+    .project-info {
+        padding: 1.2rem;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .project-buttons .btn.btn-primary,
+    .project-buttons .btn.btn-secondary {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Skills */
     .skills-categories {
         grid-template-columns: 1fr 1fr;
     }
-}
-/* =============================================== */
-/* --- MOBILE OPTIMIZATIONS & FIXES --- */
-/* =============================================== */
 
-/* 1. Give the browser a hint to optimize our animation elements */
-.reveal {
-    will-change: transform, opacity;
-}
-
-/* Apply these styles ONLY on screens smaller than 768px (tablets and phones) */
-@media (max-width: 768px) {
-
-    /* 2. Make the scroll animations more subtle on mobile */
-    .reveal {
-        transform: translateY(20px);
-        transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    .subsection-title {
+        font-size: 1.5rem;
     }
-    
-    /* 3. Fix the contact form overflow issue */
+
+    /* Certificates */
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+        padding: 1.5rem;
+    }
+
+    /* Currently Building */
+    .currently-building-card {
+        padding: 1.5rem;
+    }
+
+    /* Contact */
     .contact-content {
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
-    /* 4. Ensure form inputs don't have unexpected widths */
     .contact-form input,
     .contact-form textarea {
         width: 100%;
     }
 
-    /* 5. Certificates grid single column on mobile */
-    .certificates-grid {
+    .contact-form .btn {
+        width: 100%;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 1.5rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+        margin: 0 0.8rem;
+    }
+
+    /* Animations */
+    .reveal {
+        transform: translateY(20px);
+        transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content .hero-title {
+        font-size: 1rem;
+    }
+    .hero-content .hero-value {
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .hero-buttons .btn.btn-primary,
+    .hero-buttons .btn.btn-secondary {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Skills */
+    .skills-categories {
         grid-template-columns: 1fr;
+    }
+
+    .subsection-title {
+        font-size: 1.3rem;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 0.85rem;
     }
 }
 /* =============================================== */
