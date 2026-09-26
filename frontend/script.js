@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     // --- Smooth scrolling for navigation links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            target.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
             });
         });
     });
@@ -15,17 +18,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
+        const closeMenu = () => {
+            menuToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('menu-open');
+        };
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('open');
             navLinks.classList.toggle('open');
+            const isOpen = navLinks.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('menu-open', isOpen);
         });
 
         // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                menuToggle.classList.remove('open');
-                navLinks.classList.remove('open');
+                closeMenu();
             });
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+                closeMenu();
+            }
         });
     }
 
@@ -42,26 +60,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Intersection Observer for animations on scroll ---
     const revealElements = document.querySelectorAll('.reveal');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Check for a data-delay attribute
-                const delay = entry.target.dataset.delay;
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, delay ? parseInt(delay) : 0);
-                
-                // Stop observing the element once it's visible
-                observer.unobserve(entry.target);
-            }
+    if (prefersReducedMotion) {
+        revealElements.forEach(el => el.classList.add('visible'));
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.dataset.delay;
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, delay ? parseInt(delay, 10) : 0);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
         });
-    }, {
-        threshold: 0.1 // Trigger when 10% of the element is in view
-    });
 
-    revealElements.forEach(el => {
-        observer.observe(el);
-    });
+        revealElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
 
 
     // --- Form submission - THIS CODE IS UNCHANGED TO PRESERVE BACKEND FUNCTIONALITY ---

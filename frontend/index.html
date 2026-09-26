@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <button class="menu-toggle" aria-label="Toggle navigation">
+    <nav class="navbar" aria-label="Primary">
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-controls="primary-navigation" aria-expanded="false">
             <span class="hamburger"></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-navigation">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -214,9 +214,12 @@
         <div class="contact-content reveal">
             <p class="contact-intro">I am actively seeking internship or junior web developer opportunities. I am especially interested in roles involving web applications, SaaS platforms, or AI-integrated products.</p>
             <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <label class="visually-hidden" for="contact-name">Your Name</label>
+                <input id="contact-name" name="name" type="text" placeholder="Your Name" required>
+                <label class="visually-hidden" for="contact-email">Your Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="Your Email" required>
+                <label class="visually-hidden" for="contact-message">Your Message</label>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn">Send Message</button>
             </form>
         </div>
@@ -224,13 +227,13 @@
 
     <footer>
         <div class="social-links reveal">
-            <a href="https://github.com/aadeshshukla" target="_blank">
+            <a href="https://github.com/aadeshshukla" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/aadesh-shukla-5462772a5" target="_blank">
+            <a href="https://www.linkedin.com/in/aadesh-shukla-5462772a5" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://www.instagram.com/mausam_shukla_" target="_blank">
+            <a href="https://www.instagram.com/mausam_shukla_" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
