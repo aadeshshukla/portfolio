@@ -519,17 +519,42 @@ section {
 
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+    list-style: none;
+    padding: 0;
 }
 
 .certificate-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
     border-radius: 16px;
-    padding: 1.7rem;
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.certificate-media {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+    border: 1px dashed rgba(180, 212, 255, 0.45);
+    background: linear-gradient(140deg, rgba(125, 211, 252, 0.14), rgba(14, 24, 40, 0.5));
+    display: grid;
+    place-items: center;
+    padding: 0.8rem;
+    font-size: 0.86rem;
     text-align: center;
+    color: var(--text-secondary);
 }
 
 .credential-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     text-decoration: none;
     color: var(--accent);
     font-weight: 600;
@@ -537,6 +562,11 @@ section {
 
 .credential-link:hover {
     color: #b4e5ff;
+}
+
+.credential-link::after {
+    content: '↗';
+    font-size: 0.82rem;
 }
 
 .contact-content {
