@@ -539,15 +539,12 @@ section {
 .certificate-media {
     width: 100%;
     aspect-ratio: 16 / 10;
+    display: block;
     border-radius: 12px;
     border: 1px dashed rgba(180, 212, 255, 0.45);
     background: linear-gradient(140deg, rgba(125, 211, 252, 0.14), rgba(14, 24, 40, 0.5));
-    display: grid;
-    place-items: center;
-    padding: 0.8rem;
-    font-size: 0.86rem;
-    text-align: center;
-    color: var(--text-secondary);
+    object-fit: contain;
+    padding: 0.35rem;
 }
 
 .credential-link {
